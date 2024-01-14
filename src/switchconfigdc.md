@@ -1,6 +1,6 @@
 ## Switch Configuratie Datacenter
 
-Hierbij de configuratie voor de coreswitch van het datacenter:
+Hierbij de configuratie voor een distributie switch van het datacenter:
 
 ```
 Current configuration : 3107 bytes

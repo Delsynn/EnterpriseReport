@@ -1,0 +1,46 @@
+## Vlan Data Datacenter
+
+Hierbij de vlan data voor de switches van het datacenter:
+
+```
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Gig1/0/2, Gig1/0/3, Gig1/0/4, Gig1/0/5
+                                                Gig1/0/6, Gig1/0/7, Gig1/0/8, Gig1/0/9
+                                                Gig1/0/10, Gig1/0/11, Gig1/0/12, Gig1/0/13
+                                                Gig1/0/14, Gig1/0/15, Gig1/0/16, Gig1/0/17
+                                                Gig1/0/18, Gig1/0/19, Gig1/0/20, Gig1/0/21
+                                                Gig1/0/22, Gig1/0/23, Gig1/0/24, Gig1/1/1
+                                                Gig1/1/2, Gig1/1/3, Gig1/1/4
+210  Datacenter                       active    
+220  Cameras                          active    
+230  Badgelezers                      active    
+240  Printers                         active    
+250  CV                               active    
+1002 fddi-default                     active    
+1003 token-ring-default               active    
+1004 fddinet-default                  active    
+1005 trnet-default                    active    
+
+VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+1    enet  100001     1500  -      -      -        -    -        0      0
+210  enet  100210     1500  -      -      -        -    -        0      0
+220  enet  100220     1500  -      -      -        -    -        0      0
+230  enet  100230     1500  -      -      -        -    -        0      0
+240  enet  100240     1500  -      -      -        -    -        0      0
+250  enet  100250     1500  -      -      -        -    -        0      0
+1002 fddi  101002     1500  -      -      -        -    -        0      0   
+1003 tr    101003     1500  -      -      -        -    -        0      0   
+1004 fdnet 101004     1500  -      -      -        ieee -        0      0   
+1005 trnet 101005     1500  -      -      -        ibm  -        0      0   
+
+VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+
+Remote SPAN VLANs
+------------------------------------------------------------------------------
+
+Primary Secondary Type              Ports
+------- --------- ----------------- ------------------------------------------
+```

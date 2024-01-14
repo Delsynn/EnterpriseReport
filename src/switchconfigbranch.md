@@ -1,6 +1,6 @@
 ## Switch Configuratie Branch Office
 
-Hierbij de configuratie voor de coreswitch van het branch office:
+Hierbij de configuratie voor een distributie switch van het branch office:
 
 ```
 Current configuration : 3471 bytes

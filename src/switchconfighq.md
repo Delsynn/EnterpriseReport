@@ -1,6 +1,6 @@
 ## Switch Configuratie Headquarters
 
-Hierbij de configuratie voor de coreswitch van headquarters:
+Hierbij de configuratie voor een distributie switch van headquarters:
 
 ```
 Current configuration : 4720 bytes
