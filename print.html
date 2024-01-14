@@ -89,7 +89,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introductie.html">Introductie</a></li><li class="chapter-item expanded affix "><li class="part-title">Cisco Configuraties</li><li class="chapter-item expanded "><a href="routerconfighq.html"><strong aria-hidden="true">1.</strong> Router Configuratie HQ</a></li><li class="chapter-item expanded "><a href="routerconfigbranch.html"><strong aria-hidden="true">2.</strong> Router Configuratie Branch</a></li><li class="chapter-item expanded "><a href="routerconfigdc.html"><strong aria-hidden="true">3.</strong> Router Configuratie Datacenter</a></li><li class="chapter-item expanded "><a href="coreswitchconfighq.html"><strong aria-hidden="true">4.</strong> Switch Configuratie HQ</a></li><li class="chapter-item expanded "><a href="coreswitchconfigbranch.html"><strong aria-hidden="true">5.</strong> Switch Configuratie Branch</a></li><li class="chapter-item expanded "><a href="coreswitchconfigdc.html"><strong aria-hidden="true">6.</strong> Switch Configuratie Datacenter</a></li><li class="chapter-item expanded "><a href="switchconfighq.html"><strong aria-hidden="true">7.</strong> Switch Configuratie HQ</a></li><li class="chapter-item expanded "><a href="switchconfigbranch.html"><strong aria-hidden="true">8.</strong> Switch Configuratie Branch</a></li><li class="chapter-item expanded "><a href="switchconfigdc.html"><strong aria-hidden="true">9.</strong> Switch Configuratie Datacenter</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introductie.html">Introductie</a></li><li class="chapter-item expanded affix "><li class="part-title">Cisco Router Configuraties</li><li class="chapter-item expanded "><a href="routerconfighq.html"><strong aria-hidden="true">1.</strong> Router Configuratie HQ</a></li><li class="chapter-item expanded "><a href="routerconfigbranch.html"><strong aria-hidden="true">2.</strong> Router Configuratie Branch</a></li><li class="chapter-item expanded "><a href="routerconfigdc.html"><strong aria-hidden="true">3.</strong> Router Configuratie Datacenter</a></li><li class="chapter-item expanded affix "><li class="part-title">Cisco Core Switch Configurations</li><li class="chapter-item expanded "><a href="coreswitchconfighq.html"><strong aria-hidden="true">4.</strong> Switch Configuratie HQ</a></li><li class="chapter-item expanded "><a href="coreswitchconfigbranch.html"><strong aria-hidden="true">5.</strong> Switch Configuratie Branch</a></li><li class="chapter-item expanded "><a href="coreswitchconfigdc.html"><strong aria-hidden="true">6.</strong> Switch Configuratie Datacenter</a></li><li class="chapter-item expanded affix "><li class="part-title">Cisco Distribution Switch Configuration</li><li class="chapter-item expanded "><a href="switchconfighq.html"><strong aria-hidden="true">7.</strong> Switch Configuratie HQ</a></li><li class="chapter-item expanded "><a href="switchconfigbranch.html"><strong aria-hidden="true">8.</strong> Switch Configuratie Branch</a></li><li class="chapter-item expanded "><a href="switchconfigdc.html"><strong aria-hidden="true">9.</strong> Switch Configuratie Datacenter</a></li><li class="chapter-item expanded affix "><li class="part-title">Cisco Switch Vlan Data</li><li class="chapter-item expanded "><a href="vlandatahq.html"><strong aria-hidden="true">10.</strong> Vlan Data HQ</a></li><li class="chapter-item expanded "><a href="vlandatabranch.html"><strong aria-hidden="true">11.</strong> Vlan Data Branch</a></li><li class="chapter-item expanded "><a href="vlandatadc.html"><strong aria-hidden="true">12.</strong> Vlan Data Datacenter</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -1381,7 +1381,7 @@ line vty 5 15
 end
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="switch-configuratie-headquarters-1"><a class="header" href="#switch-configuratie-headquarters-1">Switch Configuratie Headquarters</a></h2>
-<p>Hierbij de configuratie voor de coreswitch van headquarters:</p>
+<p>Hierbij de configuratie voor een distributie switch van headquarters:</p>
 <pre><code>Current configuration : 4720 bytes
 !
 version 16.3.2
@@ -1626,7 +1626,7 @@ line vty 5 15
 end
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="switch-configuratie-branch-office-1"><a class="header" href="#switch-configuratie-branch-office-1">Switch Configuratie Branch Office</a></h2>
-<p>Hierbij de configuratie voor de coreswitch van het branch office:</p>
+<p>Hierbij de configuratie voor een distributie switch van het branch office:</p>
 <pre><code>Current configuration : 3471 bytes
 !
 version 16.3.2
@@ -1835,7 +1835,7 @@ line vty 5 15
 end
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="switch-configuratie-datacenter-1"><a class="header" href="#switch-configuratie-datacenter-1">Switch Configuratie Datacenter</a></h2>
-<p>Hierbij de configuratie voor de coreswitch van het datacenter:</p>
+<p>Hierbij de configuratie voor een distributie switch van het datacenter:</p>
 <pre><code>Current configuration : 3107 bytes
 !
 version 16.3.2
@@ -2032,6 +2032,155 @@ line vty 5 15
 !
 !
 end
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="vlan-data-hq"><a class="header" href="#vlan-data-hq">Vlan Data HQ</a></h2>
+<p>Hierbij de vlan data voor de switches van HQ:</p>
+<pre><code>VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Gig1/0/3, Gig1/0/4, Gig1/0/5, Gig1/0/6
+                                                Gig1/0/7, Gig1/0/8, Gig1/0/9, Gig1/0/10
+                                                Gig1/0/11, Gig1/0/12, Gig1/0/13, Gig1/0/14
+                                                Gig1/0/15, Gig1/0/16, Gig1/0/17, Gig1/0/18
+                                                Gig1/0/19, Gig1/0/20, Gig1/0/21, Gig1/0/22
+                                                Gig1/0/23, Gig1/0/24, Gig1/1/1, Gig1/1/2
+                                                Gig1/1/3, Gig1/1/4
+10   Sales                            active    
+20   Accounting                       active    
+30   Faciliteiten                     active    
+40   IT                               active    
+50   Marketing                        active    
+60   CustomerSupport                  active    
+70   CustomerSuccess                  active    
+80   Bezoekers                        active    
+90   Cameras                          active    
+100  Badgelezers                      active    
+110  Printers                         active    
+120  CV                               active    
+130  DigitaleBorden                   active    
+1002 fddi-default                     active    
+1003 token-ring-default               active    
+1004 fddinet-default                  active    
+1005 trnet-default                    active    
+
+VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+1    enet  100001     1500  -      -      -        -    -        0      0
+10   enet  100010     1500  -      -      -        -    -        0      0
+20   enet  100020     1500  -      -      -        -    -        0      0
+30   enet  100030     1500  -      -      -        -    -        0      0
+40   enet  100040     1500  -      -      -        -    -        0      0
+50   enet  100050     1500  -      -      -        -    -        0      0
+60   enet  100060     1500  -      -      -        -    -        0      0
+70   enet  100070     1500  -      -      -        -    -        0      0
+80   enet  100080     1500  -      -      -        -    -        0      0
+90   enet  100090     1500  -      -      -        -    -        0      0
+100  enet  100100     1500  -      -      -        -    -        0      0
+110  enet  100110     1500  -      -      -        -    -        0      0
+120  enet  100120     1500  -      -      -        -    -        0      0
+130  enet  100130     1500  -      -      -        -    -        0      0
+1002 fddi  101002     1500  -      -      -        -    -        0      0   
+1003 tr    101003     1500  -      -      -        -    -        0      0   
+1004 fdnet 101004     1500  -      -      -        ieee -        0      0   
+1005 trnet 101005     1500  -      -      -        ibm  -        0      0   
+
+VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+
+Remote SPAN VLANs
+------------------------------------------------------------------------------
+
+Primary Secondary Type              Ports
+------- --------- ----------------- ------------------------------------------
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="vlan-data-branch"><a class="header" href="#vlan-data-branch">Vlan Data Branch</a></h2>
+<p>Hierbij de vlan data voor de switches van het branch office:</p>
+<pre><code>VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Gig1/0/3, Gig1/0/4, Gig1/0/5, Gig1/0/6
+                                                Gig1/0/7, Gig1/0/8, Gig1/0/9, Gig1/0/10
+                                                Gig1/0/11, Gig1/0/12, Gig1/0/13, Gig1/0/14
+                                                Gig1/0/15, Gig1/0/16, Gig1/0/17, Gig1/0/18
+                                                Gig1/0/19, Gig1/0/20, Gig1/0/21, Gig1/0/22
+                                                Gig1/0/23, Gig1/0/24, Gig1/1/1, Gig1/1/2
+                                                Gig1/1/3, Gig1/1/4
+140  RD                               active    
+150  Bezoekers                        active    
+160  Cameras                          active    
+170  Badgelezers                      active    
+180  Printers                         active    
+190  CV                               active    
+200  DigitaleBorden                   active    
+1002 fddi-default                     active    
+1003 token-ring-default               active    
+1004 fddinet-default                  active    
+1005 trnet-default                    active    
+
+VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+1    enet  100001     1500  -      -      -        -    -        0      0
+140  enet  100140     1500  -      -      -        -    -        0      0
+150  enet  100150     1500  -      -      -        -    -        0      0
+160  enet  100160     1500  -      -      -        -    -        0      0
+170  enet  100170     1500  -      -      -        -    -        0      0
+180  enet  100180     1500  -      -      -        -    -        0      0
+190  enet  100190     1500  -      -      -        -    -        0      0
+200  enet  100200     1500  -      -      -        -    -        0      0
+1002 fddi  101002     1500  -      -      -        -    -        0      0   
+1003 tr    101003     1500  -      -      -        -    -        0      0   
+1004 fdnet 101004     1500  -      -      -        ieee -        0      0   
+1005 trnet 101005     1500  -      -      -        ibm  -        0      0   
+
+VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+
+Remote SPAN VLANs
+------------------------------------------------------------------------------
+
+Primary Secondary Type              Ports
+------- --------- ----------------- ------------------------------------------
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="vlan-data-datacenter"><a class="header" href="#vlan-data-datacenter">Vlan Data Datacenter</a></h2>
+<p>Hierbij de vlan data voor de switches van het datacenter:</p>
+<pre><code>VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Gig1/0/2, Gig1/0/3, Gig1/0/4, Gig1/0/5
+                                                Gig1/0/6, Gig1/0/7, Gig1/0/8, Gig1/0/9
+                                                Gig1/0/10, Gig1/0/11, Gig1/0/12, Gig1/0/13
+                                                Gig1/0/14, Gig1/0/15, Gig1/0/16, Gig1/0/17
+                                                Gig1/0/18, Gig1/0/19, Gig1/0/20, Gig1/0/21
+                                                Gig1/0/22, Gig1/0/23, Gig1/0/24, Gig1/1/1
+                                                Gig1/1/2, Gig1/1/3, Gig1/1/4
+210  Datacenter                       active    
+220  Cameras                          active    
+230  Badgelezers                      active    
+240  Printers                         active    
+250  CV                               active    
+1002 fddi-default                     active    
+1003 token-ring-default               active    
+1004 fddinet-default                  active    
+1005 trnet-default                    active    
+
+VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+1    enet  100001     1500  -      -      -        -    -        0      0
+210  enet  100210     1500  -      -      -        -    -        0      0
+220  enet  100220     1500  -      -      -        -    -        0      0
+230  enet  100230     1500  -      -      -        -    -        0      0
+240  enet  100240     1500  -      -      -        -    -        0      0
+250  enet  100250     1500  -      -      -        -    -        0      0
+1002 fddi  101002     1500  -      -      -        -    -        0      0   
+1003 tr    101003     1500  -      -      -        -    -        0      0   
+1004 fdnet 101004     1500  -      -      -        ieee -        0      0   
+1005 trnet 101005     1500  -      -      -        ibm  -        0      0   
+
+VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+
+Remote SPAN VLANs
+------------------------------------------------------------------------------
+
+Primary Secondary Type              Ports
+------- --------- ----------------- ------------------------------------------
 </code></pre>
 
                     </main>
