@@ -39,7 +39,5 @@ VLAN 240: Printers () 192.168.240.0
 VLAN 250: CV (5 HQ, 3 BRANCH, 2 DATA) 192.168.250.0
 
 
-Starting implementation.
-
 Subnettings:
 192.168.[<VLAN nummer> - 0].0/24

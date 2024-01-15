@@ -61,7 +61,7 @@ router ospf 1
  network 10.0.3.0 0.0.0.3 area 0
 ```
 
-In deze configuratie adverteer ik alle netwerken waarover deze routers waken. De netwerken van kritische infrastructuur zoals camera's en badgelezers kunnen eventueel beveiligd worden door gebruik van ACL's.
+In deze configuratie adverteren wij alle netwerken waarover deze routers waken. De netwerken van kritische infrastructuur zoals camera's en badgelezers kunnen eventueel beveiligd worden door gebruik van ACL's.
 
 Ook heb ik het interne interface van iedere router als passief gezet zodat de netwerken niet in hun eigen netwerk worden geadverteerd. Hiermee kan onnodige trafiek van de ospf "hello" packets vermeden worden.
 

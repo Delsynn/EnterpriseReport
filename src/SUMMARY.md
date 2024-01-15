@@ -7,6 +7,9 @@
 - [Internet Verbinding](internet.md)
 - [LAN-beveiliging](security.md)
 - [Remote Access](ssh.md)
+# Uitbreiding Opdracht
+- [Extra aandacht](aandacht.md)
+- [Uitbreiding en kennis](uitbreiding.md)
 # Cisco Router Configuraties
 - [Router Configuratie HQ](routerconfighq.md)
 - [Router Configuratie Branch](routerconfigbranch.md)
