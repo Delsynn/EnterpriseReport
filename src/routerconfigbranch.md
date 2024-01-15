@@ -128,6 +128,7 @@ interface Vlan1
 router ospf 1
  router-id 2.2.2.2
  log-adjacency-changes
+ passive-interface GigabitEthernet0/1
  network 10.0.1.0 0.0.0.3 area 0
  network 192.168.140.0 0.0.0.255 area 0
  network 192.168.150.0 0.0.0.255 area 0

@@ -2,6 +2,11 @@
 
 [Introductie](introductie.md)
 
+# Technische requirements
+- [Dynamische Routering](ospf.md)
+- [Internet Verbinding](internet.md)
+- [LAN-beveiliging](security.md)
+- [Remote Access](ssh.md)
 # Cisco Router Configuraties
 - [Router Configuratie HQ](routerconfighq.md)
 - [Router Configuratie Branch](routerconfigbranch.md)
