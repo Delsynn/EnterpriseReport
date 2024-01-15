@@ -3,8 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Page not found</title>
-        <base href="/">
+        <title>Dynamische Routering</title>
 
 
         <!-- Custom HTML head -->
@@ -89,7 +88,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introductie.html">Introductie</a></li><li class="chapter-item expanded affix "><li class="part-title">Technische requirements</li><li class="chapter-item expanded "><a href="ospf.html"><strong aria-hidden="true">1.</strong> Dynamische Routering</a></li><li class="chapter-item expanded "><a href="internet.html"><strong aria-hidden="true">2.</strong> Internet Verbinding</a></li><li class="chapter-item expanded "><a href="security.html"><strong aria-hidden="true">3.</strong> LAN-beveiliging</a></li><li class="chapter-item expanded "><a href="ssh.html"><strong aria-hidden="true">4.</strong> Remote Access</a></li><li class="chapter-item expanded affix "><li class="part-title">Cisco Router Configuraties</li><li class="chapter-item expanded "><a href="routerconfighq.html"><strong aria-hidden="true">5.</strong> Router Configuratie HQ</a></li><li class="chapter-item expanded "><a href="routerconfigbranch.html"><strong aria-hidden="true">6.</strong> Router Configuratie Branch</a></li><li class="chapter-item expanded "><a href="routerconfigdc.html"><strong aria-hidden="true">7.</strong> Router Configuratie Datacenter</a></li><li class="chapter-item expanded affix "><li class="part-title">Cisco Core Switch Configurations</li><li class="chapter-item expanded "><a href="coreswitchconfighq.html"><strong aria-hidden="true">8.</strong> Switch Configuratie HQ</a></li><li class="chapter-item expanded "><a href="coreswitchconfigbranch.html"><strong aria-hidden="true">9.</strong> Switch Configuratie Branch</a></li><li class="chapter-item expanded "><a href="coreswitchconfigdc.html"><strong aria-hidden="true">10.</strong> Switch Configuratie Datacenter</a></li><li class="chapter-item expanded affix "><li class="part-title">Cisco Distribution Switch Configuration</li><li class="chapter-item expanded "><a href="switchconfighq.html"><strong aria-hidden="true">11.</strong> Switch Configuratie HQ</a></li><li class="chapter-item expanded "><a href="switchconfigbranch.html"><strong aria-hidden="true">12.</strong> Switch Configuratie Branch</a></li><li class="chapter-item expanded "><a href="switchconfigdc.html"><strong aria-hidden="true">13.</strong> Switch Configuratie Datacenter</a></li><li class="chapter-item expanded affix "><li class="part-title">Cisco Switch Vlan Data</li><li class="chapter-item expanded "><a href="vlandatahq.html"><strong aria-hidden="true">14.</strong> Vlan Data HQ</a></li><li class="chapter-item expanded "><a href="vlandatabranch.html"><strong aria-hidden="true">15.</strong> Vlan Data Branch</a></li><li class="chapter-item expanded "><a href="vlandatadc.html"><strong aria-hidden="true">16.</strong> Vlan Data Datacenter</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introductie.html">Introductie</a></li><li class="chapter-item expanded affix "><li class="part-title">Technische requirements</li><li class="chapter-item expanded "><a href="ospf.html" class="active"><strong aria-hidden="true">1.</strong> Dynamische Routering</a></li><li class="chapter-item expanded "><a href="internet.html"><strong aria-hidden="true">2.</strong> Internet Verbinding</a></li><li class="chapter-item expanded "><a href="security.html"><strong aria-hidden="true">3.</strong> LAN-beveiliging</a></li><li class="chapter-item expanded "><a href="ssh.html"><strong aria-hidden="true">4.</strong> Remote Access</a></li><li class="chapter-item expanded affix "><li class="part-title">Cisco Router Configuraties</li><li class="chapter-item expanded "><a href="routerconfighq.html"><strong aria-hidden="true">5.</strong> Router Configuratie HQ</a></li><li class="chapter-item expanded "><a href="routerconfigbranch.html"><strong aria-hidden="true">6.</strong> Router Configuratie Branch</a></li><li class="chapter-item expanded "><a href="routerconfigdc.html"><strong aria-hidden="true">7.</strong> Router Configuratie Datacenter</a></li><li class="chapter-item expanded affix "><li class="part-title">Cisco Core Switch Configurations</li><li class="chapter-item expanded "><a href="coreswitchconfighq.html"><strong aria-hidden="true">8.</strong> Switch Configuratie HQ</a></li><li class="chapter-item expanded "><a href="coreswitchconfigbranch.html"><strong aria-hidden="true">9.</strong> Switch Configuratie Branch</a></li><li class="chapter-item expanded "><a href="coreswitchconfigdc.html"><strong aria-hidden="true">10.</strong> Switch Configuratie Datacenter</a></li><li class="chapter-item expanded affix "><li class="part-title">Cisco Distribution Switch Configuration</li><li class="chapter-item expanded "><a href="switchconfighq.html"><strong aria-hidden="true">11.</strong> Switch Configuratie HQ</a></li><li class="chapter-item expanded "><a href="switchconfigbranch.html"><strong aria-hidden="true">12.</strong> Switch Configuratie Branch</a></li><li class="chapter-item expanded "><a href="switchconfigdc.html"><strong aria-hidden="true">13.</strong> Switch Configuratie Datacenter</a></li><li class="chapter-item expanded affix "><li class="part-title">Cisco Switch Vlan Data</li><li class="chapter-item expanded "><a href="vlandatahq.html"><strong aria-hidden="true">14.</strong> Vlan Data HQ</a></li><li class="chapter-item expanded "><a href="vlandatabranch.html"><strong aria-hidden="true">15.</strong> Vlan Data Branch</a></li><li class="chapter-item expanded "><a href="vlandatadc.html"><strong aria-hidden="true">16.</strong> Vlan Data Datacenter</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -174,14 +173,88 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="document-not-found-404"><a class="header" href="#document-not-found-404">Document not found (404)</a></h1>
-<p>This URL is invalid, sorry. Please use the navigation bar or search to continue.</p>
+                        <h1 id="ospf"><a class="header" href="#ospf">OSPF</a></h1>
+<p>De drie routers adverteren hun netwerken naar hun neighbors, ik heb hiervoor de volgende lijnen van configuratie gebruikt:</p>
+<h3 id="router-ospf-hq"><a class="header" href="#router-ospf-hq">Router OSPF HQ</a></h3>
+<pre><code>router ospf 1
+ router-id 1.1.1.1
+ log-adjacency-changes
+ passive-interface GigabitEthernet0/1
+ network 10.0.1.0 0.0.0.3 area 0
+ network 10.0.2.0 0.0.0.3 area 0
+ network 192.168.10.0 0.0.0.255 area 0
+ network 192.168.20.0 0.0.0.255 area 0
+ network 192.168.30.0 0.0.0.255 area 0
+ network 192.168.40.0 0.0.0.255 area 0
+ network 192.168.50.0 0.0.0.255 area 0
+ network 192.168.60.0 0.0.0.255 area 0
+ network 192.168.70.0 0.0.0.255 area 0
+ network 192.168.80.0 0.0.0.255 area 0
+ network 192.168.90.0 0.0.0.255 area 0
+ network 192.168.100.0 0.0.0.255 area 0
+ network 192.168.110.0 0.0.0.255 area 0
+ network 192.168.120.0 0.0.0.255 area 0
+ network 192.168.130.0 0.0.0.255 area 0
+
+</code></pre>
+<h3 id="router-ospf-branch"><a class="header" href="#router-ospf-branch">Router OSPF Branch</a></h3>
+<pre><code>router ospf 1
+ router-id 2.2.2.2
+ log-adjacency-changes
+ passive-interface GigabitEthernet0/1
+ network 10.0.1.0 0.0.0.3 area 0
+ network 192.168.140.0 0.0.0.255 area 0
+ network 192.168.150.0 0.0.0.255 area 0
+ network 192.168.160.0 0.0.0.255 area 0
+ network 192.168.170.0 0.0.0.255 area 0
+ network 192.168.180.0 0.0.0.255 area 0
+ network 192.168.190.0 0.0.0.255 area 0
+ network 192.168.200.0 0.0.0.255 area 0
+ network 10.0.3.0 0.0.0.3 area 0
+</code></pre>
+<h3 id="router-ospf-datacenter"><a class="header" href="#router-ospf-datacenter">Router OSPF Datacenter</a></h3>
+<pre><code>router ospf 1
+ router-id 3.3.3.3
+ log-adjacency-changes
+ passive-interface GigabitEthernet0/1
+ network 10.0.2.0 0.0.0.3 area 0
+ network 192.168.210.0 0.0.0.255 area 0
+ network 192.168.220.0 0.0.0.255 area 0
+ network 192.168.230.0 0.0.0.255 area 0
+ network 192.168.240.0 0.0.0.255 area 0
+ network 192.168.250.0 0.0.0.255 area 0
+ network 10.0.3.0 0.0.0.3 area 0
+</code></pre>
+<p>In deze configuratie adverteer ik alle netwerken waarover deze routers waken. De netwerken van kritische infrastructuur zoals camera's en badgelezers kunnen eventueel beveiligd worden door gebruik van ACL's.</p>
+<p>Ook heb ik het interne interface van iedere router als passief gezet zodat de netwerken niet in hun eigen netwerk worden geadverteerd. Hiermee kan onnodige trafiek van de ospf &quot;hello&quot; packets vermeden worden.</p>
+<h2 id="neighbors"><a class="header" href="#neighbors">Neighbors</a></h2>
+<p>Door het commando &quot;show ip ospf neighbor&quot; te gebruiken kan men nu zien dat we de andere campussen als ospf neighbors zien en dus hun netwerk adverteringen zullen ontvangen.</p>
+<h3 id="hq-neighbors"><a class="header" href="#hq-neighbors">HQ Neighbors</a></h3>
+<p><img src="hqneighbors.png" alt="HQ Neighbors" /></p>
+<h3 id="branch-neighbors"><a class="header" href="#branch-neighbors">Branch Neighbors</a></h3>
+<p><img src="branchneighbors.png" alt="Branch Neighbors" /></p>
+<h3 id="datacenter-neighbors"><a class="header" href="#datacenter-neighbors">Datacenter Neighbors</a></h3>
+<p><img src="dcneighbors.png" alt="Datacenter Neighbors" /></p>
+<h2 id="routes"><a class="header" href="#routes">Routes</a></h2>
+<p>Door het commando &quot;show ip route ospf&quot; te gebruiken kan men dan zien welke routes de routers nu kennen omwille van de ospf advertering van hun neighbors.</p>
+<h3 id="hq-routes"><a class="header" href="#hq-routes">HQ Routes</a></h3>
+<p><img src="hqroutes.png" alt="HQ Routes" /></p>
+<h3 id="branch-routes"><a class="header" href="#branch-routes">Branch Routes</a></h3>
+<p><img src="branchroutes.png" alt="Branch Routes" /></p>
+<h3 id="datacenter-routes"><a class="header" href="#datacenter-routes">Datacenter Routes</a></h3>
+<p><img src="dcroutes.png" alt="Datacenter Routes" /></p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="introductie.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
 
+                            <a rel="next prefetch" href="internet.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
 
                         <div style="clear: both"></div>
                     </nav>
@@ -189,7 +262,13 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="introductie.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
 
+                    <a rel="next prefetch" href="internet.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
             </nav>
 
         </div>

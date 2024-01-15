@@ -89,7 +89,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introductie.html">Introductie</a></li><li class="chapter-item expanded affix "><li class="part-title">Cisco Router Configuraties</li><li class="chapter-item expanded "><a href="routerconfighq.html"><strong aria-hidden="true">1.</strong> Router Configuratie HQ</a></li><li class="chapter-item expanded "><a href="routerconfigbranch.html"><strong aria-hidden="true">2.</strong> Router Configuratie Branch</a></li><li class="chapter-item expanded "><a href="routerconfigdc.html"><strong aria-hidden="true">3.</strong> Router Configuratie Datacenter</a></li><li class="chapter-item expanded affix "><li class="part-title">Cisco Core Switch Configurations</li><li class="chapter-item expanded "><a href="coreswitchconfighq.html"><strong aria-hidden="true">4.</strong> Switch Configuratie HQ</a></li><li class="chapter-item expanded "><a href="coreswitchconfigbranch.html"><strong aria-hidden="true">5.</strong> Switch Configuratie Branch</a></li><li class="chapter-item expanded "><a href="coreswitchconfigdc.html"><strong aria-hidden="true">6.</strong> Switch Configuratie Datacenter</a></li><li class="chapter-item expanded affix "><li class="part-title">Cisco Distribution Switch Configuration</li><li class="chapter-item expanded "><a href="switchconfighq.html"><strong aria-hidden="true">7.</strong> Switch Configuratie HQ</a></li><li class="chapter-item expanded "><a href="switchconfigbranch.html"><strong aria-hidden="true">8.</strong> Switch Configuratie Branch</a></li><li class="chapter-item expanded "><a href="switchconfigdc.html"><strong aria-hidden="true">9.</strong> Switch Configuratie Datacenter</a></li><li class="chapter-item expanded affix "><li class="part-title">Cisco Switch Vlan Data</li><li class="chapter-item expanded "><a href="vlandatahq.html"><strong aria-hidden="true">10.</strong> Vlan Data HQ</a></li><li class="chapter-item expanded "><a href="vlandatabranch.html"><strong aria-hidden="true">11.</strong> Vlan Data Branch</a></li><li class="chapter-item expanded "><a href="vlandatadc.html"><strong aria-hidden="true">12.</strong> Vlan Data Datacenter</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introductie.html">Introductie</a></li><li class="chapter-item expanded affix "><li class="part-title">Technische requirements</li><li class="chapter-item expanded "><a href="ospf.html"><strong aria-hidden="true">1.</strong> Dynamische Routering</a></li><li class="chapter-item expanded "><a href="internet.html"><strong aria-hidden="true">2.</strong> Internet Verbinding</a></li><li class="chapter-item expanded "><a href="security.html"><strong aria-hidden="true">3.</strong> LAN-beveiliging</a></li><li class="chapter-item expanded "><a href="ssh.html"><strong aria-hidden="true">4.</strong> Remote Access</a></li><li class="chapter-item expanded affix "><li class="part-title">Cisco Router Configuraties</li><li class="chapter-item expanded "><a href="routerconfighq.html"><strong aria-hidden="true">5.</strong> Router Configuratie HQ</a></li><li class="chapter-item expanded "><a href="routerconfigbranch.html"><strong aria-hidden="true">6.</strong> Router Configuratie Branch</a></li><li class="chapter-item expanded "><a href="routerconfigdc.html"><strong aria-hidden="true">7.</strong> Router Configuratie Datacenter</a></li><li class="chapter-item expanded affix "><li class="part-title">Cisco Core Switch Configurations</li><li class="chapter-item expanded "><a href="coreswitchconfighq.html"><strong aria-hidden="true">8.</strong> Switch Configuratie HQ</a></li><li class="chapter-item expanded "><a href="coreswitchconfigbranch.html"><strong aria-hidden="true">9.</strong> Switch Configuratie Branch</a></li><li class="chapter-item expanded "><a href="coreswitchconfigdc.html"><strong aria-hidden="true">10.</strong> Switch Configuratie Datacenter</a></li><li class="chapter-item expanded affix "><li class="part-title">Cisco Distribution Switch Configuration</li><li class="chapter-item expanded "><a href="switchconfighq.html"><strong aria-hidden="true">11.</strong> Switch Configuratie HQ</a></li><li class="chapter-item expanded "><a href="switchconfigbranch.html"><strong aria-hidden="true">12.</strong> Switch Configuratie Branch</a></li><li class="chapter-item expanded "><a href="switchconfigdc.html"><strong aria-hidden="true">13.</strong> Switch Configuratie Datacenter</a></li><li class="chapter-item expanded affix "><li class="part-title">Cisco Switch Vlan Data</li><li class="chapter-item expanded "><a href="vlandatahq.html"><strong aria-hidden="true">14.</strong> Vlan Data HQ</a></li><li class="chapter-item expanded "><a href="vlandatabranch.html"><strong aria-hidden="true">15.</strong> Vlan Data Branch</a></li><li class="chapter-item expanded "><a href="vlandatadc.html"><strong aria-hidden="true">16.</strong> Vlan Data Datacenter</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -177,6 +177,121 @@
                         <h1 id="netwerk-design"><a class="header" href="#netwerk-design">Netwerk Design</a></h1>
 <p>Wij hebben uiteindelijk besloten om voor een volledige opstelling te gaan gebruik makende van Cisco netwerk apparatuur.</p>
 <p><img src="diagram.png" alt="Network Diagram" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="ospf"><a class="header" href="#ospf">OSPF</a></h1>
+<p>De drie routers adverteren hun netwerken naar hun neighbors, ik heb hiervoor de volgende lijnen van configuratie gebruikt:</p>
+<h3 id="router-ospf-hq"><a class="header" href="#router-ospf-hq">Router OSPF HQ</a></h3>
+<pre><code>router ospf 1
+ router-id 1.1.1.1
+ log-adjacency-changes
+ passive-interface GigabitEthernet0/1
+ network 10.0.1.0 0.0.0.3 area 0
+ network 10.0.2.0 0.0.0.3 area 0
+ network 192.168.10.0 0.0.0.255 area 0
+ network 192.168.20.0 0.0.0.255 area 0
+ network 192.168.30.0 0.0.0.255 area 0
+ network 192.168.40.0 0.0.0.255 area 0
+ network 192.168.50.0 0.0.0.255 area 0
+ network 192.168.60.0 0.0.0.255 area 0
+ network 192.168.70.0 0.0.0.255 area 0
+ network 192.168.80.0 0.0.0.255 area 0
+ network 192.168.90.0 0.0.0.255 area 0
+ network 192.168.100.0 0.0.0.255 area 0
+ network 192.168.110.0 0.0.0.255 area 0
+ network 192.168.120.0 0.0.0.255 area 0
+ network 192.168.130.0 0.0.0.255 area 0
+
+</code></pre>
+<h3 id="router-ospf-branch"><a class="header" href="#router-ospf-branch">Router OSPF Branch</a></h3>
+<pre><code>router ospf 1
+ router-id 2.2.2.2
+ log-adjacency-changes
+ passive-interface GigabitEthernet0/1
+ network 10.0.1.0 0.0.0.3 area 0
+ network 192.168.140.0 0.0.0.255 area 0
+ network 192.168.150.0 0.0.0.255 area 0
+ network 192.168.160.0 0.0.0.255 area 0
+ network 192.168.170.0 0.0.0.255 area 0
+ network 192.168.180.0 0.0.0.255 area 0
+ network 192.168.190.0 0.0.0.255 area 0
+ network 192.168.200.0 0.0.0.255 area 0
+ network 10.0.3.0 0.0.0.3 area 0
+</code></pre>
+<h3 id="router-ospf-datacenter"><a class="header" href="#router-ospf-datacenter">Router OSPF Datacenter</a></h3>
+<pre><code>router ospf 1
+ router-id 3.3.3.3
+ log-adjacency-changes
+ passive-interface GigabitEthernet0/1
+ network 10.0.2.0 0.0.0.3 area 0
+ network 192.168.210.0 0.0.0.255 area 0
+ network 192.168.220.0 0.0.0.255 area 0
+ network 192.168.230.0 0.0.0.255 area 0
+ network 192.168.240.0 0.0.0.255 area 0
+ network 192.168.250.0 0.0.0.255 area 0
+ network 10.0.3.0 0.0.0.3 area 0
+</code></pre>
+<p>In deze configuratie adverteer ik alle netwerken waarover deze routers waken. De netwerken van kritische infrastructuur zoals camera's en badgelezers kunnen eventueel beveiligd worden door gebruik van ACL's.</p>
+<p>Ook heb ik het interne interface van iedere router als passief gezet zodat de netwerken niet in hun eigen netwerk worden geadverteerd. Hiermee kan onnodige trafiek van de ospf &quot;hello&quot; packets vermeden worden.</p>
+<h2 id="neighbors"><a class="header" href="#neighbors">Neighbors</a></h2>
+<p>Door het commando &quot;show ip ospf neighbor&quot; te gebruiken kan men nu zien dat we de andere campussen als ospf neighbors zien en dus hun netwerk adverteringen zullen ontvangen.</p>
+<h3 id="hq-neighbors"><a class="header" href="#hq-neighbors">HQ Neighbors</a></h3>
+<p><img src="hqneighbors.png" alt="HQ Neighbors" /></p>
+<h3 id="branch-neighbors"><a class="header" href="#branch-neighbors">Branch Neighbors</a></h3>
+<p><img src="branchneighbors.png" alt="Branch Neighbors" /></p>
+<h3 id="datacenter-neighbors"><a class="header" href="#datacenter-neighbors">Datacenter Neighbors</a></h3>
+<p><img src="dcneighbors.png" alt="Datacenter Neighbors" /></p>
+<h2 id="routes"><a class="header" href="#routes">Routes</a></h2>
+<p>Door het commando &quot;show ip route ospf&quot; te gebruiken kan men dan zien welke routes de routers nu kennen omwille van de ospf advertering van hun neighbors.</p>
+<h3 id="hq-routes"><a class="header" href="#hq-routes">HQ Routes</a></h3>
+<p><img src="hqroutes.png" alt="HQ Routes" /></p>
+<h3 id="branch-routes"><a class="header" href="#branch-routes">Branch Routes</a></h3>
+<p><img src="branchroutes.png" alt="Branch Routes" /></p>
+<h3 id="datacenter-routes"><a class="header" href="#datacenter-routes">Datacenter Routes</a></h3>
+<p><img src="dcroutes.png" alt="Datacenter Routes" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="internet"><a class="header" href="#internet">Internet</a></h1>
+<p>Voor alle campussen van internet te voorzien in het dark fiber scenario hebben wij het volgende gedaan.</p>
+<h2 id="hoofdkantoor"><a class="header" href="#hoofdkantoor">Hoofdkantoor</a></h2>
+<p>Ten eerste hebben wij voor het hoofdkantoor een default route naar (in dit geval één van de externe ip's van UCLL) het internet en een nat regel met een ACL die al het intern verkeer toelaat.</p>
+<p>Realistisch is dit niet secuur en zou men niet alle interne verkeer toelaten.</p>
+<p><img src="hqnatanddefaultroute.png" alt="HQ NAT and Default Route" /></p>
+<p>We zetten ook het externe interface van het hoofdkantoor als de &quot;ip nat outside&quot; en alle interne interfaces als &quot;ip nat inside&quot;. En ook het externe ip van het hoofdkantoor ingesteld op het externe inteface van hun router.</p>
+<p><img src="ipnatinsideandoutside.png" alt="IP NAT Inside and Outside" /></p>
+<p>Dit zorgt voor basic connectiviteit op het hoofdkantoor.</p>
+<h2 id="branch-en-datacenter"><a class="header" href="#branch-en-datacenter">Branch en Datacenter</a></h2>
+<p>Voor de branch en het datacenter moeten wij dan enkel een default route instellen die naar hun connectie met de router op het hoofdkantoor wijst en alle interfaces op deze plekken op ip nat inside instellen (ook het interface dat geconnecteerd is met het hoofdkantoor, in ons geval serial 0/0/0).</p>
+<h3 id="branch"><a class="header" href="#branch">Branch</a></h3>
+<p><img src="defaultroutebranch.png" alt="Default Route Branch" />
+<img src="ipnatinsidebranch.png" alt="IP Nat Inside Branch" /></p>
+<h3 id="datacenter"><a class="header" href="#datacenter">Datacenter</a></h3>
+<p><img src="defaultroutedc.png" alt="Default Route Datacenter" />
+<img src="ipnatinsidedc.png" alt="IP Nat Inside Datacenter" /></p>
+<p>Dit zorgt dat wij naar buiten kunnen maar hierdoor is onze DNS resolutie nog niet in orde.
+Dus voor alle vlans voor gebruikers zoals sales, accounting, faciliteiten, it enzovoort hebben wij een dhcp pool aangemaakt waarin de dns wordt ingesteld en hun default router.</p>
+<h2 id="dhcp"><a class="header" href="#dhcp">DHCP</a></h2>
+<p>Voor dhcp gebruikten wij google als dns (8.8.8.8) en hebben wij ook enkele excluded ip addresses voor elke vlan toegevoegd.</p>
+<p><img src="dhcphq.png" alt="DHCP HQ" /></p>
+<p>Zoals in de configuraties te zien hebben branch en datacenter ook pools voor hun gebruiker vlans.
+Hiermee hebben wij connectiviteit en dns resolutie waardoor onze gebruikers dan dus ook op het internet kunnen.</p>
+<div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><h1 id="remote-access"><a class="header" href="#remote-access">Remote Access</a></h1>
+<p>Voor ssh in te stellen op alle apparaten moeten wij de volgende commando's uitvoeren:</p>
+<pre><code>username admin secret cisco
+
+ip domain-name ucll.local
+crypto key generate rsa general-keys modulus 1024
+ip ssh version 2
+
+line vty 0 15
+transport input ssh
+</code></pre>
+<p>Ook moeten wij een ip instellen op één van de gebruiker vlan interfaces voor de switches zodat we deze kunnen bereiken met SSH. Dit gaat dus in de vlan zijn waar de relevante gebruiker vanuit werkt. Wij hebben geen aparte management vlan aangemaakt maar gewoon al bestaande vlans gebruikt, namelijk IT op HQ, RD op Branch en Datacenter op Datacenter.</p>
+<p>Hieronder deze interfaces voor de core switches, die van de distribution layer switches zijn hetzelfde enkel met 253 voor het laatste octet.</p>
+<h2 id="hq"><a class="header" href="#hq">HQ</a></h2>
+<p><img src="sshvlanhq.png" alt="SSH VLAN INTERFACE HQ" /></p>
+<h2 id="branch-1"><a class="header" href="#branch-1">Branch</a></h2>
+<p><img src="sshvlanbranch.png" alt="SSH VLAN INTERFACE BRANCH" /></p>
+<h2 id="datacenter-1"><a class="header" href="#datacenter-1">Datacenter</a></h2>
+<p><img src="sshvlandc.png" alt="SSH VLAN INTERFACE DC" /></p>
+<p>De routers op deze plekken kunnen bereikt worden met eventueel hun extern ip. Best practice zou zijn dat wij gewoon op alle switches vlan 1 toevoegen als management vlan en hierop het ip zetten. Hieraan dachten wij echter te laat.</p>
+<p>Men kan dan ssh-en naar deze apparaten met bijvoorbeeld voor coreswitch op hq &quot;admin@192.168.40.254&quot;. Dan zal men voor het paswoord gevraagd worden.</p>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="router-configuratie-headquarters"><a class="header" href="#router-configuratie-headquarters">Router Configuratie Headquarters</a></h2>
 <p>Hierbij de configuratie voor de router van headquarters:</p>
 <pre><code>Current configuration : 4913 bytes
@@ -376,6 +491,7 @@ interface Vlan1
 router ospf 1
  router-id 1.1.1.1
  log-adjacency-changes
+ passive-interface GigabitEthernet0/1
  network 10.0.1.0 0.0.0.3 area 0
  network 10.0.2.0 0.0.0.3 area 0
  network 192.168.10.0 0.0.0.255 area 0
@@ -545,6 +661,7 @@ interface Vlan1
 router ospf 1
  router-id 2.2.2.2
  log-adjacency-changes
+ passive-interface GigabitEthernet0/1
  network 10.0.1.0 0.0.0.3 area 0
  network 192.168.140.0 0.0.0.255 area 0
  network 192.168.150.0 0.0.0.255 area 0
