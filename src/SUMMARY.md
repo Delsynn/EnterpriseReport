@@ -18,7 +18,7 @@
 - [Switch Configuratie HQ](coreswitchconfighq.md)
 - [Switch Configuratie Branch](coreswitchconfigbranch.md)
 - [Switch Configuratie Datacenter](coreswitchconfigdc.md)
-# Cisco Distribution Switch Configuration
+# Cisco Access Switch Configuration
 - [Switch Configuratie HQ](switchconfighq.md)
 - [Switch Configuratie Branch](switchconfigbranch.md)
 - [Switch Configuratie Datacenter](switchconfigdc.md)
