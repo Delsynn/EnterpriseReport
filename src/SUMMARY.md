@@ -14,11 +14,11 @@
 - [Router Configuratie HQ](routerconfighq.md)
 - [Router Configuratie Branch](routerconfigbranch.md)
 - [Router Configuratie Datacenter](routerconfigdc.md)µ
-# Cisco Core Switch Configurations
+# Cisco Core Switch Configuraties
 - [Switch Configuratie HQ](coreswitchconfighq.md)
 - [Switch Configuratie Branch](coreswitchconfigbranch.md)
 - [Switch Configuratie Datacenter](coreswitchconfigdc.md)
-# Cisco Access Switch Configuration
+# Cisco Access Switch Configuraties
 - [Switch Configuratie HQ](switchconfighq.md)
 - [Switch Configuratie Branch](switchconfigbranch.md)
 - [Switch Configuratie Datacenter](switchconfigdc.md)
